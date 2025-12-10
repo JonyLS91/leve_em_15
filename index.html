@@ -289,12 +289,7 @@
     <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
     <script src="script.js"></script>
     <script>
-        if (!window.location.pathname.includes("ofertaespecial")) {
-            history.pushState(null, null, location.href);
-            window.addEventListener("popstate", function () {
-                window.location.href = "ofertaespecial/";
-            });
-        }
+        // Back-button redirection removed as requested
     </script>
 </body>
 
