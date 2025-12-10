@@ -288,7 +288,19 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        if (!window.location.pathname.includes("ofertaespecial")) {
+            // Push a state with a specific flag
+            history.pushState({ backRedirect: true }, null, location.href);
 
+            window.addEventListener("popstate", function (event) {
+                // Only redirect if the state we popped to has our flag
+                if (event.state && event.state.backRedirect) {
+                    window.location.href = "ofertaespecial/";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
