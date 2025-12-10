@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Oferta Especial - Leve em 15</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Specific styles for the offer page */
+        .timer-container {
+            background-color: #ff4757;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 400px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .hero h1 {
+            color: #ff4757;
+            /* Urgency color */
+        }
+
+        .navbar .nav-links,
+        .navbar .nav-cta,
+        .mobile-menu-btn {
+            display: none !important;
+        }
+
+        .navbar .container {
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation (Logo Only) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../" class="logo">LEVE EM <span class="highlight">15</span></a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <span class="badge" style="background-color: #ff4757;">⚠️ ÚLTIMA CHANCE</span>
+            <h1>
+                🎁 Oferta Especial de Última Chance – <span class="highlight">50% OFF</span>
+            </h1>
+            <p style="font-size: 1.2rem; font-weight: bold;">
+                Você quase saiu… então liberamos algo exclusivo para você.
+            </p>
+            <p>
+                O mesmo produto pela metade do preço da oferta original. Sim, é isso mesmo. Você sabe quanto custa o
+                valor original.
+                Agora você pode garantir por 50% do preço – oferta única, exclusiva e que não estará disponível
+                novamente.
+                Se você recusar aqui, o preço volta ao normal.
+            </p>
+
+            <!-- Countdown Timer -->
+            <div class="timer-container">
+                ⏳ ESSA OFERTA EXPIRA EM: <span id="countdown">15:00</span>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <a href="#compra" class="btn btn-primary pulse">GARANTIR 50% DE DESCONTO</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Offer Section -->
+    <section id="compra" class="offer">
+        <div class="container">
+            <div class="offer-box" style="border: 2px solid #ff4757;">
+                <div class="offer-header">
+                    <span class="offer-tag" style="background-color: #ff4757;">OFERTA SECRETA</span>
+                    <div class="urgency-badge">⚠️ NÃO FECHE ESSA PÁGINA ⚠️</div>
+                    <h2>Tudo o que você ia levar... pela metade do preço</h2>
+                    <p>Acesso imediato, mesmos bônus, mesma entrega.</p>
+                </div>
+                <div class="offer-content">
+                    <div class="offer-features">
+                        <h3>O Que Você Vai Receber:</h3>
+                        <ul class="feature-list">
+                            <li><strong>📱 App Leve em 15 Completo</strong></li>
+                            <li><strong>📅 Plano Alimentar de 15 Dias</strong></li>
+                            <li><strong>🤖 NutriBot – Assistente de Calorias</strong></li>
+                            <li><strong>📚 E-book: Receitas Fit Deliciosas</strong></li>
+                            <li><strong>🎁 BÔNUS: Guia de Jejum Intermitente</strong></li>
+                        </ul>
+                    </div>
+                    <div class="offer-price-card">
+                        <div class="price-header">
+                            <span class="discount-badge" style="background-color: #ff4757;">50% EXTRA OFF</span>
+                        </div>
+                        <div class="price-values">
+                            <span class="old-price" style="text-decoration: none; font-size: 1rem;">De <span
+                                    style="text-decoration: line-through;">€7,90</span> por apenas:</span>
+                            <span class="new-price" style="color: #ff4757;">€3,95</span>
+                        </div>
+                        <p class="payment-info">Pagamento único, acesso vitalício</p>
+                        <a href="#" class="btn btn-primary btn-block" style="background-color: #ff4757;">🔒 Garantir
+                            Agora por 50% do Preço</a>
+                        <div class="guarantee">
+                            <span class="shield-icon">🛡️</span>
+                            <span>Garantia de 7 dias ou seu dinheiro de volta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>LEVE EM 15</h3>
+                <p>Seu parceiro definitivo na busca por uma vida mais leve, saudável e feliz.</p>
+            </div>
+            <div class="footer-legal">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Política de Reembolso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Leve em 15. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
+    <script>
+        // Countdown Timer Logic
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var fifteenMinutes = 60 * 15,
+                display = document.querySelector('#countdown');
+            startTimer(fifteenMinutes, display);
+        };
+    </script>
+</body>
+
+</html>
