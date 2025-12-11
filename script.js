@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     // Mobile Menu Toggle
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // FAQ Toggle
     const faqQuestions = document.querySelectorAll('.faq-question');
-    
+
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
             const item = question.parentElement;
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         prevButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
             const prevSlide = currentSlide.previousElementSibling;
-            
+
             // Loop back to last slide if at the beginning
             if (!prevSlide) {
                 const lastSlide = slides[slides.length - 1];
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nextButton.addEventListener('click', e => {
             const currentSlide = track.querySelector('.current-slide');
             const nextSlide = currentSlide.nextElementSibling;
-            
+
             // Loop back to first slide if at the end
             if (!nextSlide) {
                 const firstSlide = slides[0];
@@ -132,12 +132,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 moveToSlide(track, currentSlide, nextSlide);
             }
         });
-        
+
         // Auto-play functionality (optional but recommended)
         setInterval(() => {
             const currentSlide = track.querySelector('.current-slide');
             const nextSlide = currentSlide.nextElementSibling;
-            
+
             if (!nextSlide) {
                 const firstSlide = slides[0];
                 moveToSlide(track, currentSlide, firstSlide);
@@ -145,16 +145,49 @@ document.addEventListener('DOMContentLoaded', function () {
                 moveToSlide(track, currentSlide, nextSlide);
             }
         }, 5000); // Change slide every 5 seconds
-        
+
         // Update slide position on resize
         window.addEventListener('resize', () => {
-             const newSlideWidth = slides[0].getBoundingClientRect().width;
-             slides.forEach((slide, index) => {
+            const newSlideWidth = slides[0].getBoundingClientRect().width;
+            slides.forEach((slide, index) => {
                 slide.style.left = newSlideWidth * index + 'px';
-             });
-             // Re-center current slide
-             const currentSlide = track.querySelector('.current-slide');
-             track.style.transform = 'translateX(-' + currentSlide.style.left + ')';
+            });
+            // Re-center current slide
+            const currentSlide = track.querySelector('.current-slide');
+            track.style.transform = 'translateX(-' + currentSlide.style.left + ')';
         });
     }
+    // Urgency Banner Logic
+    const bannerDateElement = document.getElementById('banner-date');
+    const bannerTimerElement = document.getElementById('banner-timer');
+
+    if (bannerDateElement && bannerTimerElement) {
+        // Set current date
+        const today = new Date();
+        const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        bannerDateElement.textContent = `(${today.toLocaleDateString('pt-BR', dateOptions)})`;
+
+        // Countdown Timer to Midnight
+        function updateBannerTimer() {
+            const now = new Date();
+            const tomorrow = new Date();
+            tomorrow.setHours(24, 0, 0, 0);
+
+            const diff = tomorrow - now;
+
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const formattedHours = hours.toString().padStart(2, '0');
+            const formattedMinutes = minutes.toString().padStart(2, '0');
+            const formattedSeconds = seconds.toString().padStart(2, '0');
+
+            bannerTimerElement.textContent = `${formattedHours}h ${formattedMinutes}m ${formattedSeconds}s`;
+        }
+
+        updateBannerTimer(); // Run immediately
+        setInterval(updateBannerTimer, 1000); // Update every second
+    }
+
 });
