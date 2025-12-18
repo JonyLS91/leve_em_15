@@ -177,8 +177,8 @@
                     <h4>50 Receitas Irresistíveis</h4>
                 </div>
                 <div class="bonus-item">
-                    <img src="images/protocolo-lipo-natural.png" alt="Protocolo Lipo Natural">
-                    <h4>Protocolo Lipo Natural</h4>
+                    <img src="images/sumos-saudaveis.png" alt="Sumos Saudáveis">
+                    <h4>Sumos Saudáveis</h4>
                 </div>
                 <div class="bonus-item">
                     <img src="images/protocolo-celulite.png" alt="Protocolo Celulite Nunca Mais">
@@ -207,7 +207,7 @@
                         <li><i class="fas fa-check-square"></i> Acesso ao App Leve em 15</li>
                         <li><i class="fas fa-check-square"></i> Treinos para fazer em casa</li>
                         <li><i class="fas fa-check-square"></i> Bônus #1: 50 Receitas Irresistíveis</li>
-                        <li><i class="fas fa-check-square"></i> Bônus #2: Protocolo Lipo Natural</li>
+                        <li><i class="fas fa-check-square"></i> Bônus #2: Sumos Saudáveis</li>
                         <li><i class="fas fa-check-square"></i> Bônus #3: Protocolo Celulite Nunca Mais</li>
                     </ul>
 
@@ -253,32 +253,42 @@
                 <div class="faq-item">
                     <button class="faq-question">Quanto tempo de acesso eu tenho? <span class="icon">+</span></button>
                     <div class="faq-answer">
-                        <p>O acesso é vitalício! Você compra uma vez e o conteúdo é seu para sempre.</p>
+                        <p>O acesso é 100% vitalício! Uma vez adquirido, o conteúdo é seu para sempre. Você pode
+                            assistir às aulas, acessar os cardápios e fazer os treinos no seu próprio ritmo, quantas
+                            vezes quiser, sem prazo de validade.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Consigo fazer tudo pelo celular? <span class="icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Sim! TUDO pode ser acessado pelo celular, tablet ou computador.</p>
+                        <p>Sim, perfeitamente! Nossa plataforma é totalmente otimizada para dispositivos móveis. Você
+                            pode acessar todo o conteúdo (cardápios, treinos e bônus) direto do seu celular, tablet ou
+                            computador, de onde estiver.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Serve para quem não treina? <span class="icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Com certeza. O método é adaptável para iniciantes e inclui treinos que podem ser feitos em
-                            casa.</p>
+                        <p>Com certeza! O pilar principal do Leve em 15 é a alimentação estratégica. Os treinos são um
+                            acelerador poderoso, mas são opcionais e adaptáveis. Mesmo sem treinar, você terá grandes
+                            resultados apenas seguindo o protocolo alimentar. E se decidir treinar, temos exercícios
+                            rápidos para fazer em casa.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">Tem garantia? <span class="icon">+</span></button>
                     <div class="faq-answer">
-                        <p>Sim, você tem 7 dias de garantia incondicional. Se não gostar, devolvemos seu dinheiro.</p>
+                        <p>Sim! Oferecemos uma Garantia Incondicional de 7 Dias. Você pode entrar, acessar todo o
+                            material, baixar os bônus e testar o método. Se por qualquer motivo achar que não é para
+                            você, basta nos enviar um e-mail que devolvemos 100% do seu investimento, sem perguntas e
+                            sem burocracia. O risco é todo nosso!</p>
                     </div>
                 </div>
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="mailto:suporte@leveem15.com" class="btn btn-green"><i class="fab fa-whatsapp"></i> SUPORTE
+                <a href="mailto:suporte@leveem15.com" class="btn btn-red"><img src="images/icon-gmail.png"
+                        style="width: 20px; vertical-align: middle; margin-right: 8px;"> SUPORTE
                     EXCLUSIVO</a>
             </div>
         </div>
@@ -297,14 +307,8 @@
 
     <script src="script.js"></script>
     <script>
-        // FAQ Accordion Logic
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
+        // FAQ Accordion Logic removed (handled in script.js)
+
 
         // Back Redirect
         if (!window.location.pathname.includes("ofertaespecial")) {
