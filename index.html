@@ -294,6 +294,47 @@
         </div>
     </section>
 
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ficou com alguma dúvida? <span class="text-red">Fale Conosco</span></h2>
+                <p>Preencha o formulário abaixo e entraremos em contato.</p>
+            </div>
+            <div class="contact-form-wrapper">
+                <form action="https://formsubmit.co/jony08022007@gmail.com" method="POST" class="contact-form">
+                    <!-- Config -->
+                    <input type="hidden" name="_subject" value="Novo Cadastro - Leve em 15">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://leveeem15.netlify.app/">
+                    <!-- Redirect to home or specific page, adjusting to auto-detect if possible or generic -->
+                    <!-- Ideally we would simply use the current URL, but for now I'll use a relative path trick or just let it default if not sure of domain, but hardcoding a thank you or just standard next is better. 
+                         Let's just use a relative path if supported or let formsubmit handle it. 
+                         Actually, standard practice is to use the current page. I'll omit _next for now to let formsubmit show its success page which is clear, or I can try to simply use value="." for same page.
+                         Let's stick to the basic setup first. -->
+
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Gmail</label>
+                        <input type="email" id="email" name="email" placeholder="Seu gmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telemóvel</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Seu número de telemóvel" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-red btn-block">ENVIAR DADOS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
