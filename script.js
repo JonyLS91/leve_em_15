@@ -190,4 +190,56 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(updateBannerTimer, 1000); // Update every second
     }
 
+
+    // Contact Form AJAX Logic
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Disable button and show loading state
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'ENVIANDO...';
+            }
+
+            const formData = new FormData(contactForm);
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Success: Hide form, show message
+                        contactForm.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        // Reset form just in case
+                        contactForm.reset();
+                    } else {
+                        // Quick error handling
+                        alert('Ocorreu um erro ao enviar. Por favor, tente novamente ou use o email suporte@leveem15.com.');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'ENVIAR DADOS';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Ocorreu um erro ao enviar. Por favor, tente novamente.');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'ENVIAR DADOS';
+                    }
+                });
+        });
+    }
+
 });
